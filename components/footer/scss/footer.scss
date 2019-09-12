@@ -1,0 +1,18 @@
+.footer-main{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
+    .main__container-footer__box{
+        display: flex;
+        width: 20%;
+        margin: 0 auto;
+        .footer-main__item{
+            margin-right: 10%;
+            margin-left: 10%;
+            a{ i{ font-size: 40px; color: #a91b28;}}
+        }
+    }
+}
+
+@import 'mq_footer.scss';

@@ -1,0 +1,112 @@
+$desktop: 1023px;
+$tablet: 728px;
+$mobile: 428px;
+
+@media screen and (max-width: $desktop){
+    .header__nav{
+        .header__nav-menu{
+            .header__nav-menu__content{
+                .menu__content-item > a{
+                    font-size:11px; 
+                } 
+            } 
+        } 
+    }
+}
+
+@media screen and (max-width: $tablet){
+
+}
+
+@media screen and (max-width: $mobile){
+    .header__nav{
+        height: 3rem;
+        .header__nav-menu-mobile{
+            display: inline-flex;
+            width: 100%;
+            padding: 5%;
+            .details_main{
+                width: 90%;
+            }
+            .details_main > summary::-webkit-details-marker{
+                display: none; 
+            }
+            .details_main > summary{
+                width: 20%;
+                > img{
+                    max-width: 75%; 
+                } 
+            }
+            .details_main > .nav__menu-mobile{
+                position: absolute;
+                padding-top: 6%;
+                background-color: #333;
+                padding-left: 5%;
+                padding-right: 4%;
+                margin-left: -5%;
+                > li{
+                    margin-top: 30%;
+                    margin-bottom: 30%;
+                    margin-right: -5%;
+                    margin-left: 1%;
+                    > a{
+                        color: #eee;
+                        text-decoration: none; 
+                    }
+                    .details_submain > summary::-webkit-details-marker{
+                        display: none; 
+                    }
+                    .details_submain > summary{
+                        color: #eee;
+                        i{
+                            font-size: 15px; 
+                        } 
+                    }
+                    .details_submain > ul{
+                        padding-top: 6%;
+                        > li{
+                            margin-top: 30%;
+                            margin-bottom: 30%;
+                            > a{
+                                color: #eee;
+                                text-decoration: none; 
+                            } 
+                        } 
+                    } 
+                } 
+            }
+            .lang-mobile{
+                position: relative;
+                margin-top: 1.5%;
+                details{
+                    position: absolute;
+                    background-color: #333;
+                    margin-left: -17%;
+                    ul{
+                        padding: 5px;
+                        margin-left: -50px;
+                        background-color: #333;
+                        li{
+                            margin-top: 30%;
+                            margin-bottom: 25%;
+                            a{
+                                text-decoration:none;
+                                color: #ddd;
+                            }
+                        }
+                    }
+                }
+                details > summary::-webkit-details-marker{
+                    display: none;
+                }
+                details > summary{
+                    color: #ddd;
+                    font-size: 30px;
+                }
+            }
+        }
+        .header__nav-menu{
+            display: none; 
+        } 
+    }
+}

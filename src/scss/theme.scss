@@ -1,0 +1,19 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.main__container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-gap: 0.1em;
+    header, footer{
+        grid-column: 1 / span 6;
+        background-color: #333; 
+    }
+    main{
+        grid-column: 1 / span 6; 
+    } 
+}
+
+
+@import 'mq_theme.scss'

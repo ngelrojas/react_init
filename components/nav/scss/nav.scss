@@ -1,0 +1,64 @@
+.header__nav{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    .header__nav-menu-mobile{
+        display: none; 
+    }
+    .header__nav-menu{
+        text-align: center;
+        width: 100%; 
+       .header__nav-menu__content{
+            display:inline-flex;
+            width: 60%;
+
+            .menu__content-item{
+                margin-left: 5%;
+                margin-right: 5%;
+                display: flex;
+                align-items: center;
+
+                a{
+                    color: #eee;
+                    text-decoration: none; 
+                     img{
+                        max-width: 40%; 
+                     } 
+                } 
+            }
+            .menu__content-item a:hover{
+                color:#a91b28; 
+            }
+            .menu__content-item details > summary{
+                color: #eee;
+                display: flex;
+                align-items: center; 
+            }
+            .menu__content-item details > summary:hover{
+                 cursor: pointer;
+                 color:#a91b28;
+            }
+            .menu__content-item details > summary > i{
+                font-size: 20px;
+                margin-left: 2%; 
+            }
+            .menu__content-item details > summary::-webkit-details-marker{
+                display: none; 
+            }
+            .menu__content-item details > .submenu{
+                position: absolute;
+                width: inherit;
+                margin-top: 1%;
+                background: #333333;
+                padding-right: 3%;
+                padding-left: 1%;
+                margin-left: -1%;
+                >li{
+                    margin-top: 40%;
+                    margin-bottom: 40%; 
+                }
+            }
+        } 
+    }
+}
+@import 'mq_nav.scss';

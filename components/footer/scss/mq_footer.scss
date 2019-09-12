@@ -1,0 +1,16 @@
+$desktop: 1023px;
+$tablet: 728px;
+$mobile: 428px;
+
+@media screen and (max-width: $tablet){}
+
+@media screen and (max-width: $mobile){
+    .footer-main .main__container-footer__box{
+        width: 90%;
+        margin: 0 auto;
+        .footer-main__item{
+            margin-right: 8%;
+            margin-left: 7%;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+$desktop: 1023px;
+$tablet: 728px;
+$mobile: 428px;
+
+/* display for tablet devices */
+@media screen and (max-width: $tablet){
+
+}
+
+/* display for mobile devices */
+@media screen and (max-width: $mobile){
+    article .content__article{
+        display: block;
+        margin-bottom: 10%;
+        .content__article--content{
+            .content__article--head{
+                h2{
+                    text-align: center;
+                    padding-top: 10%;
+                }
+            }
+            p{
+                padding-left: 12%;
+                padding-right: 12%;
+            }
+            .content__article--footer{
+                margin-top: 10%;
+                .content__footer--item{
+                    margin-left: 50%;
+                    margin-right: 50%;
+                }
+               
+            }
+        }
+        .content__article--side{
+            figure{
+                text-align: center;
+            }
+        }
+    }
+}
+
+
