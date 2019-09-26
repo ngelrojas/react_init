@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom'
 import './scss/article.scss'
 
 
-const Article = () => {
+const DEFAULT_IMAGE = 'https://picsum.photos/300/300/?blur=2'
+const DEFAULT_TITLE = 'titl this article'
+const DEFAULT_EXCERPT = 'to request multiple images of the same size in your browser, and the random query para to prevent the images from being cached'
+const DEFAULT_LINK = '/thi-title-article'
+
+
+export const Article = ({ cover = DEFAULT_IMAGE, title = DEFAULT_TITLE, excerpt = DEFAULT_EXCERPT, path = DEFAULT_LINK }) => {
     return(
         <article>
             
@@ -11,8 +17,8 @@ const Article = () => {
                 <div className="content__article--side">
                     <figure>
 
-                        <Link to="/">
-                            <img src="https://picsum.photos/300/300/?blur=2" alt="ngelroajsp.com" />
+                        <Link to={path}>
+                            <img src={cover} alt="ngelroajsp.com" />
                         </Link>
                         
                     </figure>        
@@ -20,12 +26,12 @@ const Article = () => {
 
                 <div className="content__article--content">
                     <div className="content__article--head">
-                        <Link to="/">
-                            <h2>title this article its fun...!</h2>
+                        <Link to={path}>
+                            <h2>{ title }</h2>
                         </Link>
                         
                     </div>
-                    <p>To request multiple images of the same size in your browser, add the random query param to prevent the images from being cached</p>
+                    <p>{ excerpt }</p>
                     <div className="content__article--footer">
                         <div className="footer__share content__footer--item">
                             <Link to="#"><i className="fa fa-share-alt"></i> </Link>
@@ -44,5 +50,4 @@ const Article = () => {
     )
 }
 
-export default Article
 
