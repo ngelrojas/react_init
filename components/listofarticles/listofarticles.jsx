@@ -24,7 +24,7 @@ export const ListofArticles = () => {
    const renderList = () => (
         <section>
             {
-               loading ? articles.map(article => <Article key={article.id} />) : <h1>Loading...!</h1> 
+               loading ? articles.map(article => <Article key={article.id} id={article.id} />) : <h1>Loading...!</h1> 
             }
              
         </section>

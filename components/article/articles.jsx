@@ -1,19 +1,27 @@
-import React from 'react'
+import React, { useState, Fragment } from 'react'
 import { Link } from 'react-router-dom'
+import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
+import { FavButton } from '../favbutton/favbutton.jsx'
+import { useLocalStorage } from '../hooks/useLocalStorage.js'
 import './scss/article.scss'
 
 
 const DEFAULT_IMAGE = 'https://picsum.photos/300/300/?blur=2'
 const DEFAULT_TITLE = 'titl this article'
 const DEFAULT_EXCERPT = 'to request multiple images of the same size in your browser, and the random query para to prevent the images from being cached'
-const DEFAULT_LINK = '/thi-title-article'
+const SLUG_LINK = '/thi-title-article'
 
 
-export const Article = ({ cover = DEFAULT_IMAGE, title = DEFAULT_TITLE, excerpt = DEFAULT_EXCERPT, path = DEFAULT_LINK }) => {
+export const Article = ({id, likes = 0, cover = DEFAULT_IMAGE, title = DEFAULT_TITLE, excerpt = DEFAULT_EXCERPT, path = SLUG_LINK }) => {
+    
+    const key = `like-${id}`
+    const [liked, setLiked] = useLocalStorage(key, false)
+    const Icon = liked ? MdFavorite : MdFavoriteBorder
+
     return(
         <article>
-            
-            <div className="content__article">
+            <Fragment>
+             <div className="content__article">
                 <div className="content__article--side">
                     <figure>
 
@@ -37,15 +45,16 @@ export const Article = ({ cover = DEFAULT_IMAGE, title = DEFAULT_TITLE, excerpt 
                             <Link to="#"><i className="fa fa-share-alt"></i> </Link>
                         </div>
                         <div className="footer__like content__footer--item">
-                            <Link to="#"><i className="fa fa-heart"></i> </Link>
+                            <FavButton liked={liked} likes={likes} onClick={()=> setLiked(!liked)} />
                         </div>
                         <div className="footer__readmore content__footer--item">
-                            <Link to="#"><i className="fa fa-arrow-circle-right"></i> </Link>
+                            <Link to={path}><i className="fa fa-arrow-circle-right"></i> </Link>
                         </div>
                     </div>
                 </div>
-            </div>
-            
+            </div>           
+            </Fragment>
+ 
         </article>
     )
 }

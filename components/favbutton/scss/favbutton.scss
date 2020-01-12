@@ -1,0 +1,12 @@
+article .content__article--footer{
+    .footer__like{
+        button{
+            display: flex;
+            align-items: center;
+            border: 0px;
+            & svg{
+                margin-right: 4px; 
+            } 
+        } 
+    }
+}
